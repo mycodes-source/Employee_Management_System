@@ -6,4 +6,6 @@ import com.project.entity.Leaves;
 
 public interface LeaveRepository extends JpaRepository<Leaves, Integer>{
 
+//	public findByEmployee
+	
 }

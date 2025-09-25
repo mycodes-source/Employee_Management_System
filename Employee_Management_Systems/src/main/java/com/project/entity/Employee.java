@@ -5,6 +5,8 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -25,11 +27,12 @@ public class Employee {
 	
 	@Id
 	@Column(name="emp_id")
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Id;
 	
 	
 	@Column(name = "emp_name",unique = true)
-	private String Name;
+	private String name;
 	
 	@Column(name = "emp_email",nullable = false)
 	private String EMail;
@@ -55,10 +58,10 @@ public class Employee {
 	@Column(name = "emp_phoneno",nullable = false,unique = true)
 	private String Phone_no;
 	
-	@OneToMany(mappedBy="Employee",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="Id",cascade = CascadeType.ALL)
 	private List<Leaves> leaves;
 	
-	@OneToMany(mappedBy = "Employee" , cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "id" , cascade = CascadeType.ALL)
 	private List<Duty> duties;
 	
 	@ManyToOne

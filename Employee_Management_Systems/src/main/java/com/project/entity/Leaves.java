@@ -35,6 +35,6 @@ public class Leaves {
 	private String status;
 	
 	@ManyToOne
-	@JoinColumn(name="emp_id")
+	@JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
 	private Employee employee;
 }
