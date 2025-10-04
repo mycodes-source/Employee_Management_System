@@ -58,6 +58,9 @@ public class Employee {
 	@Column(name = "emp_phoneno",nullable = false,unique = true)
 	private String Phone_no;
 	
+	@Column(name = "acc_status",nullable= false) 
+	private String accountStatus;
+	
 	@OneToMany(mappedBy="Id",cascade = CascadeType.ALL)
 	private List<Leaves> leaves;
 	

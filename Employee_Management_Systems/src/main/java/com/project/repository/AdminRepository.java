@@ -7,5 +7,5 @@ import com.project.entity.Admin;
 
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Integer>{
-
+	public Admin findByNameAndPassword(String name,String password);
 }
